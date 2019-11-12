@@ -17,8 +17,14 @@
         <script src="assets/javascript/main.js"></script>
         <!-- moment.js -->
         <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    
+    
+    
     </head>
 
+
+
+    
     <body>
         <div class="container">
             <!-- Header Panel -->
@@ -63,7 +69,7 @@
                             <label for="">Destination</label>
                         </div>
                         <div class="input-field col s12">
-                            <input type="time" class="validate" id="firstInput">
+                            <input type="time" class="validate" id="firstTrainInput">
                             <label class='active' for="">First Train (HH:MM)</label>
                         </div>
                         <div class="input-field col s12">
@@ -75,6 +81,27 @@
                 </div>
             </div>
         </div>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAX49sN-F8NoWfeLVDkG7hhY5Bw-mDHZbw",
+    authDomain: "train-scheduler-85252.firebaseapp.com",
+    databaseURL: "https://train-scheduler-85252.firebaseio.com",
+    projectId: "train-scheduler-85252",
+    storageBucket: "train-scheduler-85252.appspot.com",
+    messagingSenderId: "24260172265",
+    appId: "1:24260172265:web:5a10b52756dd3126095378"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
     </body>
 
 </html>
