@@ -13,18 +13,12 @@
         <link rel="stylesheet" href="assets/css/style.css">
         <!-- AJAX/JQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!-- Javascript -->
-        <script src="assets/javascript/main.js"></script>
         <!-- moment.js -->
         <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    
-    
+   
     
     </head>
 
-
-
-    
     <body>
         <div class="container">
             <!-- Header Panel -->
@@ -54,7 +48,6 @@
                     </tbody>
                 </table>
             </div>
-
             <!-- Submission Panel -->
             <div class="row">
                 <div class='card-panel'>
@@ -83,9 +76,7 @@
         </div>
         <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-database.js"></script>
 
 <script>
   // Your web app's Firebase configuration
@@ -100,8 +91,11 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-</script>
+  var database = firebase.database();
 
+</script>
+    <!-- Javascript -->
+    <script src="assets/javascript/main.js"></script>
     </body>
 
 </html>
