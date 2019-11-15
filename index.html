@@ -1,102 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Train Scheduler</title>
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <!-- CSS -->
-        <link rel="stylesheet" href="assets/css/style.css">
-        <!-- AJAX/JQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!-- moment.js -->
-        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-   
-    
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Scheduler</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- AJAX/JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
-    <body>
-        <div class="container">
-            <!-- Header Panel -->
-            <div class="row">
-                <div class="jumbotron jumbotron-fluid">
-                    <div class="container">
-                        <h1 class="display-4">Train Name Goes Here</h1>
-                        <p class="lead">MOre Cool Stuff</p>
-                    </div>
-                </div>
-            </div>
-            <img style="-webkit-user-select: none;margin: auto;" src="https://i2.wp.com/live-nr-2017.pantheonsite.io/wp-content/uploads/2013/09/Train20Wreck20One.gif?resize=500%2C340&amp;ssl=1">
-            <img src="https://media1.tenor.com/images/5d74165b3d627ba572a199e0ca43cb27/tenor.gif?itemid=15044026" width="518" height="289.16465863453817" alt="Buster Keaton Old Train GIF - BusterKeaton OldTrain Train GIFs" style="max-width: 518px; background-color: rgb(63, 63, 63);">
-            <!-- Display Panel -->
-            <div class="row">
-                <h4 class='center-align'>Current Train Schedule</h4>
-                <table class="table table-striped center bordered responsive-table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Train Name</th>
-                            <th scope="col">Destination</th>
-                            <th scope="col">Frequency (in minutes)</th>
-                            <th scope="col">Time of Next Arrival</th>
-                            <th scope="col">Minutes Away</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
-            <!-- Submission Panel -->
-            <div class="row">
-                <div class='card-panel'>
-                    <h4 class='center-align'>Add Your Train</h4>
-                    <form>
-                        <div class="input-field col s12">
-                            <input type="text" class="validate" id="trainNameInput">
-                            <label for="">Train Name</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <input type="text" class="validate" id="destinationInput">
-                            <label for="">Destination</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <input type="time" class="validate" id="firstTrainInput">
-                            <label class='active' for="">First Train (HH:MM)</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <input type="number" class="validate" id="frequencyInput">
-                            <label for="">Frequency (minutes)</label>
-                        </div>
-                        <button type="submit" class="btn" id="addTrainBtn">Submit</button>
-                    </form>
-                </div>
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Panel -->
+        <div class="row" id="header">
+                <img id="train2" class="col-sm"
+                    src="https://media1.tenor.com/images/5d74165b3d627ba572a199e0ca43cb27/tenor.gif?itemid=15044026"
+                    width="518" height="289.16465863453817"
+                    alt="Buster Keaton Old Train GIF - BusterKeaton OldTrain Train GIFs"
+                    style="max-width: 518px; background-color: rgb(63, 63, 63);">
+                <h1 class="display-4 col-sm">Steamer Schedule</h1>
+                <img id="train1" class="col-sm" style="-webkit-user-select: none;margin: auto;"
+                    src="https://i2.wp.com/live-nr-2017.pantheonsite.io/wp-content/uploads/2013/09/Train20Wreck20One.gif?resize=500%2C340&amp;ssl=1">
+             
+
+            
+        </div>
+
+        <div id="box">
+            <div id="box-inner">
             </div>
         </div>
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-database.js"></script>
+        <!-- Display Panel -->
+        <div class="row">
+            <h4 class='center-align'>Current Train Schedule</h4>
+            <table class="table table-striped center bordered responsive-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency (in minutes)</th>
+                        <th scope="col">Time of Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyAX49sN-F8NoWfeLVDkG7hhY5Bw-mDHZbw",
-    authDomain: "train-scheduler-85252.firebaseapp.com",
-    databaseURL: "https://train-scheduler-85252.firebaseio.com",
-    projectId: "train-scheduler-85252",
-    storageBucket: "train-scheduler-85252.appspot.com",
-    messagingSenderId: "24260172265",
-    appId: "1:24260172265:web:5a10b52756dd3126095378"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  var database = firebase.database();
+        <!-- Submission Panel -->
+        <div class="row">
+            <div class='card-panel'>
+                <h4 class='center-align'>Add Your Train</h4>
+                <form>
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" id="trainNameInput">
+                        <label for="">Train Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" id="destinationInput">
+                        <label for="">Destination</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="time" class="validate" id="firstTrainInput">
+                        <label class='active' for="">First Train (HH:MM)</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="number" class="validate" id="frequencyInput">
+                        <label for="">Frequency (minutes)</label>
+                    </div>
+                    <button type="submit" class="btn" id="addTrainBtn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-database.js"></script>
 
-</script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAX49sN-F8NoWfeLVDkG7hhY5Bw-mDHZbw",
+            authDomain: "train-scheduler-85252.firebaseapp.com",
+            databaseURL: "https://train-scheduler-85252.firebaseio.com",
+            projectId: "train-scheduler-85252",
+            storageBucket: "train-scheduler-85252.appspot.com",
+            messagingSenderId: "24260172265",
+            appId: "1:24260172265:web:5a10b52756dd3126095378"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
+
+    </script>
     <!-- Javascript -->
     <script src="assets/javascript/main.js"></script>
-    </body>
+</body>
 
 </html>

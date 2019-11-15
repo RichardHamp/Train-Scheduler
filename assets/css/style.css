@@ -1,0 +1,30 @@
+body {
+    background: url(../images/backdrop.jpg) no-repeat;
+    background-size: 100%;
+    background-color: black;
+}
+
+#train1 {
+    filter: sepia(1);
+    width: 200px;
+    border-style: solid double;
+    border-width: 4px;
+    background: black;
+}
+
+#train2 {
+    width: 200px;
+    height: auto;
+    border-style: solid double;
+    border-width: 4px;
+}
+
+#header {
+ text-align: center;
+ margin-top: auto;
+}
+
+h1 {
+    font-family: Jazz LET, fantasy;
+   margin-top: 10%;
+}
