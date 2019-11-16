@@ -15,31 +15,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- moment.js -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-
-
 </head>
 
 <body>
     <div class="container">
+
         <!-- Header Panel -->
         <div class="row" id="header">
-                <img id="train2" class="col-sm"
-                    src="https://media1.tenor.com/images/5d74165b3d627ba572a199e0ca43cb27/tenor.gif?itemid=15044026"
-                    width="518" height="289.16465863453817"
-                    alt="Buster Keaton Old Train GIF - BusterKeaton OldTrain Train GIFs"
-                    style="max-width: 518px; background-color: rgb(63, 63, 63);">
-                <h1 class="display-4 col-sm">Steamer Schedule</h1>
-                <img id="train1" class="col-sm" style="-webkit-user-select: none;margin: auto;"
-                    src="https://i2.wp.com/live-nr-2017.pantheonsite.io/wp-content/uploads/2013/09/Train20Wreck20One.gif?resize=500%2C340&amp;ssl=1">
-             
-
-            
+            <img id="train2" class="col-sm"
+                src="https://media1.tenor.com/images/5d74165b3d627ba572a199e0ca43cb27/tenor.gif?itemid=15044026"
+                width="518" height="289.16465863453817"
+                alt="Buster Keaton Old Train GIF - BusterKeaton OldTrain Train GIFs"
+                style="max-width: 518px; background-color: rgb(63, 63, 63);">
+            <h1 class="display-4 col-sm">Steamer Schedule</h1>
+            <img id="train1" class="col-sm" style="-webkit-user-select: none;margin: auto;"
+                src="https://i2.wp.com/live-nr-2017.pantheonsite.io/wp-content/uploads/2013/09/Train20Wreck20One.gif?resize=500%2C340&amp;ssl=1">
         </div>
-
-        <div id="box">
-            <div id="box-inner">
-            </div>
-        </div>
+      
         <!-- Display Panel -->
         <div class="row">
             <h4 class='center-align'>Current Train Schedule</h4>
@@ -83,12 +75,11 @@
             </div>
         </div>
     </div>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+    <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-database.js"></script>
-
     <script>
-        // Your web app's Firebase configuration
         var firebaseConfig = {
             apiKey: "AIzaSyAX49sN-F8NoWfeLVDkG7hhY5Bw-mDHZbw",
             authDomain: "train-scheduler-85252.firebaseapp.com",
@@ -98,13 +89,13 @@
             messagingSenderId: "24260172265",
             appId: "1:24260172265:web:5a10b52756dd3126095378"
         };
-        // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         var database = firebase.database();
-
     </script>
+
     <!-- Javascript -->
     <script src="assets/javascript/main.js"></script>
+
 </body>
 
 </html>
