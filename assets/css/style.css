@@ -1,4 +1,5 @@
 body {
+    font-family: Jazz LET, fantasy;
     background: url(../images/backdrop.jpg) no-repeat;
     background-size: 100%;
     background-color: black;
@@ -19,12 +20,59 @@ body {
     border-width: 4px;
 }
 
+h4 {
+    text-align: center;
+}
+
+#trainNameInput {
+    width: 125%;
+    background: rgb(236, 227, 203);
+}
+
+#destinationInput {
+    width:125%;
+    background: rgb(236, 227, 203);
+}
+
+#frequencyInput {
+    width: 15%;
+    background: rgb(236, 227, 203);
+}
+
+#firstTrainInput {
+    background: rgb(236, 227, 203);
+}
+
 #header {
  text-align: center;
  margin-top: auto;
 }
 
 h1 {
-    font-family: Jazz LET, fantasy;
    margin-top: 10%;
+}
+
+.card-panel {
+    margin-left: auto;
+    margin-right:auto;
+}
+
+#addTrainBtn {
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:rgb(183, 184, 174);
+    background-color:#6b382c;
+    text-align:center;
+    transition: all 0.2s;
+  
+}
+
+#addTrainBtn:hover{
+    background-color:#806739;
 }
