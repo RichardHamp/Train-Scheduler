@@ -16,3 +16,7 @@ Check it out here: https://fozzie77.github.io/Train-Scheduler/
 * JQuery
 * Firebase
 * Moment.js
+
+# Primary Issues Faced:
+
+Getting the times to play nice with Firebase was tricky. It took me a good long while to figure out how to incorporate Firebase's technology effectively.
